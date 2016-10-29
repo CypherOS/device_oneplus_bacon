@@ -21,6 +21,7 @@
   {
     "repository":  "Raienryu97/proprietary_vendor_oneplus",
     "target_path": "vendor/oneplus",
-    "branch":      "cm-14.0"
+    "branch":      "cm-14.0",
+    "remote":      "github"
   }
 ]
