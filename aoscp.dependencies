@@ -9,7 +9,8 @@
   {
     "repository":  "Raienryu97/android_kernel_oneplus_msm8974",
     "target_path": "kernel/oneplus/msm8974",
-    "branch":      "cm-14.0"
+    "branch":      "cm-14.1",
+	"remote":      "github"
   },
   {
     "repository":  "android_device_qcom_common",
