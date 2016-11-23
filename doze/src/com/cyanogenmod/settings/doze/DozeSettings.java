@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.doze.bacon;
+package com.cyanogenmod.settings.doze;
 
 import android.app.ActionBar;
 import android.os.Bundle;
@@ -27,7 +27,7 @@ import android.view.MenuItem;
 
 import cyanogenmod.providers.CMSettings;
 
-public class WakeUpGestureSettings extends PreferenceActivity {
+public class DozeSettings extends PreferenceActivity {
 
     private static final String KEY_AMBIENT_DISPLAY_ENABLE = "ambient_display_enable";
     private static final String KEY_GESTURE_HAND_WAVE = "gesture_hand_wave";

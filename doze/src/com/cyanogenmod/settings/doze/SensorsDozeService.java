@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.doze.bacon;
+package com.cyanogenmod.settings.doze;
 
 import android.app.Service;
 import android.content.BroadcastReceiver;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.doze.bacon;
+package com.cyanogenmod.settings.doze;
 
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -31,7 +31,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(final Context context, Intent intent) {
         if (DEBUG) Log.d(TAG, "Starting service");
-        enableComponent(context, WakeUpGestureSettings.class.getName());
+        enableComponent(context, DozeSettings.class.getName());
         context.startService(new Intent(context, SensorsDozeService.class));
     }
 

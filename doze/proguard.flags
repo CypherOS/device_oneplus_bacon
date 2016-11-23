@@ -1,3 +1,3 @@
--keep class com.cyanogenmod.doze.bacon.* {
+-keep class com.cyanogenmod.settings.doze.* {
   *;
 }
