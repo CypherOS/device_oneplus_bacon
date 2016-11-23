@@ -67,7 +67,8 @@ TARGET_SCREEN_WIDTH := 1080
 # Camera
 PRODUCT_PACKAGES += \
     camera.bacon \
-    libshim_camera
+    libshim_camera \
+    Camero
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -86,8 +87,8 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Doze
-#PRODUCT_PACKAGES += \
-    #BaconDoze
+PRODUCT_PACKAGES += \
+    BaconDoze
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -228,6 +229,10 @@ PRODUCT_PACKAGES += \
 # Thermal config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine-8974.conf
+
+# Widevine
+PRODUCT_PACKAGES += \
+    libshim_wvm
 
 # WiFi
 PRODUCT_COPY_FILES += \

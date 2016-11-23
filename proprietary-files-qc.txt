@@ -63,7 +63,6 @@ vendor/lib/mediadrm/libwvdrmengine.so
 bin/loc_launcher
 lib/libloc_api_v02.so
 lib/libloc_ds_api.so
-vendor/lib/hw/activity_recognition.msm8974.so
 vendor/lib/hw/flp.default.so
 vendor/lib/libflp.so
 vendor/lib/libgeofence.so
@@ -89,6 +88,7 @@ vendor/lib/libRSDriver_adreno.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libscale.so
+vendor/lib/libuiblur.so
 
 # Graphics firmware
 etc/firmware/a330_pfp.fw
@@ -160,6 +160,7 @@ vendor/lib/libxml.so
 
 # Sensors
 bin/sensors.qcom
+vendor/lib/hw/activity_recognition.msm8974.so
 vendor/lib/hw/sensors.msm8974.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so

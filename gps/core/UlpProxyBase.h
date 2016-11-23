@@ -61,7 +61,7 @@ public:
                                        LocPosTechMask loc_technology_mask) {
         return false;
     }
-    inline virtual bool reportSv(GnssSvStatxx &svStatus,
+    inline virtual bool reportSv(HaxxSvStatus &svStatus,
                                  GpsLocationExtended &locationExtended,
                                  void* svExt) {
         return false;
