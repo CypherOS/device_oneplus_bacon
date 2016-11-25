@@ -21,9 +21,6 @@ $(call inherit-product, device/oneplus/bacon/bacon.mk)
 # Inherit telephony stuff
 $(call inherit-product, vendor/aoscp/configs/telephony.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/aoscp/configs/nfc_enhanced.mk)
-
 # Inherit some common AOSCP stuff
 $(call inherit-product, vendor/aoscp/configs/common.mk)
 
