@@ -68,7 +68,7 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_PACKAGES += \
     camera.bacon \
     libshim_camera \
-    Snap
+    Camero
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -87,12 +87,8 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Doze
-PRODUCT_PACKAGES += \
-    BaconDoze
-
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
+#PRODUCT_PACKAGES += \
+    #BaconDoze
 
 # Graphics
 PRODUCT_PACKAGES += \
