@@ -3,7 +3,7 @@
     "repository":  "device_oppo_common",
     "target_path": "device/oppo/common",
     "branch"     : "n7.1",
-	"remote"     : "cypher"
+	"remote"     : "aoscp"
   },
   {
     "repository":  "android_device_qcom_common",
