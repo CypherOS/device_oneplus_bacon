@@ -18,6 +18,12 @@
 	"remote"     : "aoscp"
   },
   {
+    "repository" : "packages_resources_Translato",
+    "target_path": "packages/resources/Translato",
+    "branch"     : "n7.1",
+	"remote"     : "aoscp"
+  },
+  {
     "repository":  "proprietary_vendor_oneplus",
     "target_path": "vendor/oneplus",
     "branch":      "n7.1",
