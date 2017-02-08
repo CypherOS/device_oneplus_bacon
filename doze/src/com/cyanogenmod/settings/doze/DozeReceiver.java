@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,25 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.cyanogenmod.settings.doze;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-public class BootCompletedReceiver extends BroadcastReceiver {
+public class DozeReceiver {
 
     private static final boolean DEBUG = false;
     private static final String TAG = "OneplusDoze";
 
+    private static final String DOZE_CATEGORY_KEY = "doze_device_settings";
+
     @Override
-    public void onReceive(final Context context, Intent intent) {
-        if (Utils.isDozeEnabled(context) && Utils.sensorsEnabled(context)) {
-            if (DEBUG) Log.d(TAG, "Starting service");
-            Utils.startService(context);
+    public void onReceive(Context context, Intent intent) {
+        super.onReceive(context, intent);
+
+        if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
+            if (Utils.isDozeEnabled(context) && Utils.sensorsEnabled(context)) {
+                if (DEBUG) Log.d(TAG, "Starting service");
+                Utils.startService(context);
+            }
         }
     }
 
+    static void notifyChanged(Context context) {
+        notifyChanged(context, DOZE_CATEGORY_KEY);
+    }
 }

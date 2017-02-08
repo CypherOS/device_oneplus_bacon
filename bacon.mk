@@ -88,7 +88,7 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Doze
 PRODUCT_PACKAGES += \
-    BaconDoze
+    OneplusDoze
 
 # Graphics
 PRODUCT_PACKAGES += \

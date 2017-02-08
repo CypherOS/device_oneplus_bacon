@@ -5,9 +5,9 @@
 # Persist filesystem
 #/dev/block/platform/msm_sdcc\.1/by-name/persist         u:object_r:persist_block_device:s0
 
+# Reserve4 filesystem for encryption
+/dev/block/platform/msm_sdcc\.1/by-name/reserve4        u:object_r:reserve4_block_device:s0
+
 # Old camera socket
 /data/cam_socket1                                       u:object_r:camera_socket:s0
 /data/cam_socket2                                       u:object_r:camera_socket:s0
-
-# WiFi MAC
-/persist/.genmac                                        u:object_r:wifi_data_file:s0

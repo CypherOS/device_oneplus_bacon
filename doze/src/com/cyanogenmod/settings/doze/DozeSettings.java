@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,58 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.cyanogenmod.settings.doze;
 
-import android.app.ActionBar;
+import android.app.Activity;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceActivity;
-import android.preference.SwitchPreference;
-import android.provider.Settings;
-import android.view.Menu;
 import android.view.MenuItem;
 
-public class DozeSettings extends PreferenceActivity {
+import com.android.settingslib.drawer.SettingsDrawerActivity;
 
-    private static final String KEY_AMBIENT_DISPLAY_ENABLE = "ambient_display_enable";
-    private static final String KEY_GESTURE_HAND_WAVE = "gesture_hand_wave";
-    private static final String KEY_GESTURE_PICK_UP = "gesture_pick_up";
-    private static final String KEY_GESTURE_POCKET = "gesture_pocket";
-    private static final String KEY_PROXIMITY_WAKE = "proximity_wake_enable";
+/**
+ * Created by shade on 10/14/16.
+ */
 
-    private SwitchPreference mAmbientDisplayPreference;
-    private SwitchPreference mHandwavePreference;
-    private SwitchPreference mPickupPreference;
-    private SwitchPreference mPocketPreference;
-    private SwitchPreference mProximityWakePreference;
+public class DozeSettings extends SettingsDrawerActivity {
+
+    private static final String TAG_DOZE = "doze";
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.gesture_panel);
-        boolean dozeEnabled = isDozeEnabled();
-        mAmbientDisplayPreference = (SwitchPreference) findPreference(KEY_AMBIENT_DISPLAY_ENABLE);
-        mAmbientDisplayPreference.setChecked(dozeEnabled);
-        mAmbientDisplayPreference.setOnPreferenceChangeListener(mAmbientDisplayPrefListener);
-        mHandwavePreference = (SwitchPreference) findPreference(KEY_GESTURE_HAND_WAVE);
-        mHandwavePreference.setEnabled(dozeEnabled);
-        mHandwavePreference.setOnPreferenceChangeListener(mGesturePrefListener);
-        mPickupPreference = (SwitchPreference) findPreference(KEY_GESTURE_PICK_UP);
-        mPickupPreference.setEnabled(dozeEnabled);
-        mPocketPreference = (SwitchPreference) findPreference(KEY_GESTURE_POCKET);
-        mPocketPreference.setEnabled(dozeEnabled);
-        mProximityWakePreference = (SwitchPreference) findPreference(KEY_PROXIMITY_WAKE);
-        mProximityWakePreference.setOnPreferenceChangeListener(mGesturePrefListener);
 
-        final ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-    }
+        setContentView(R.layout.doze);
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        getListView().setPadding(0, 0, 0, 0);
+        getFragmentManager().beginTransaction().replace(R.id.content_frame,
+                new DozeSettingsFragment(), TAG_DOZE).commit();
     }
 
     @Override
@@ -75,45 +47,4 @@ public class DozeSettings extends PreferenceActivity {
         }
         return false;
     }
-
-    private boolean enableDoze(boolean enable) {
-        return Settings.Secure.putInt(getContentResolver(),
-                Settings.Secure.DOZE_ENABLED, enable ? 1 : 0);
-    }
-
-    private boolean isDozeEnabled() {
-        return Settings.Secure.getInt(getContentResolver(),
-                Settings.Secure.DOZE_ENABLED, 1) != 0;
-    }
-
-    private Preference.OnPreferenceChangeListener mAmbientDisplayPrefListener =
-        new Preference.OnPreferenceChangeListener() {
-        @Override
-        public boolean onPreferenceChange(Preference preference, Object newValue) {
-            boolean enable = (boolean) newValue;
-            boolean ret = enableDoze(enable);
-            if (ret) {
-                mHandwavePreference.setEnabled(enable);
-                mPickupPreference.setEnabled(enable);
-                mPocketPreference.setEnabled(enable);
-            }
-            return ret;
-        }
-    };
-
-    private Preference.OnPreferenceChangeListener mGesturePrefListener =
-        new Preference.OnPreferenceChangeListener() {
-        @Override
-        public boolean onPreferenceChange(Preference preference, Object newValue) {
-            if ((boolean) newValue) {
-                final String key = preference.getKey();
-                if (KEY_GESTURE_HAND_WAVE.equals(key)) {
-                    mProximityWakePreference.setChecked(false);
-                } else if (KEY_PROXIMITY_WAKE.equals(key)) {
-                    mHandwavePreference.setChecked(false);
-                }
-            }
-            return true;
-        }
-    };
 }

@@ -48,6 +48,7 @@ vendor/lib/libvendorconn.so
 
 # DRM
 bin/qseecomd
+lib/libdrmdecrypt.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
