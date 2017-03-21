@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package com.aoscp.hardware;
+package org.aoscp.hardware;
 
-import com.aoscp.hardware.util.FileUtils;
+import org.aoscp.framework.internal.utils.FileUtils;
 
 /*
  * Disable capacitive keys
