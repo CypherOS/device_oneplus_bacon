@@ -23,11 +23,5 @@
     "target_path": "vendor/oneplus",
     "branch":      "nougat-mr1",
 	"remote":      "aoscp"
-  },
-  {
-    "repository":  "packages_resources_Translato",
-    "target_path": "packages/resources/Translato",
-	"branch":      "nougat-mr1",
-    "remote":      "aoscp"
   }
 ]
