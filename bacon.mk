@@ -67,8 +67,7 @@ TARGET_SCREEN_WIDTH := 1080
 # Camera
 PRODUCT_PACKAGES += \
     camera.bacon \
-    libshim_camera \
-    Camero
+    libshim_camera
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -85,10 +84,6 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
-# Doze
-PRODUCT_PACKAGES += \
-    OneplusDoze
 
 # Graphics
 PRODUCT_PACKAGES += \
