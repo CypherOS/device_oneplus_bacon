@@ -1,8 +1,8 @@
 
 [
   {
-    "repository":  "device_oppo_common",
-    "target_path": "device/oppo/common",
+    "repository":  "device_oneplus_common",
+    "target_path": "device/oneplus/common",
     "branch":      "nougat-mr1",
     "remote":      "aoscp"
   },
