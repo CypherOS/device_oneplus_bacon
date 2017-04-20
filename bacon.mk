@@ -212,6 +212,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh
+	
+# OnePlusParts
+PRODUCT_PACKAGES += \
+    Oneplus1Parts
 
 # STK
 PRODUCT_PACKAGES += \
