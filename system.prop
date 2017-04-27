@@ -77,6 +77,9 @@ telephony.lteOnGsmDevice=1
 # SdcardFS
 ro.sys.sdcardfs=true
 
+# Hardware keys (Enable by default)
+qemu.hw.mainkeys=1
+
 # Sensors
 ro.qc.sdk.camera.facialproc=true
 ro.qc.sdk.gestures.camera=false
