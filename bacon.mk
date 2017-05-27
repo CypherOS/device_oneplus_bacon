@@ -254,7 +254,3 @@ $(call inherit-product, vendor/oneplus/bacon/bacon-vendor.mk)
 ifneq ($(QCPATH),)
 $(call inherit-product-if-exists, $(QCPATH)/prebuilt_HY11/target/product/msm8974/prebuilt.mk)
 endif
-
-# Inherit from oppo-common
-$(call inherit-product, device/oneplus/common/common.mk)
-

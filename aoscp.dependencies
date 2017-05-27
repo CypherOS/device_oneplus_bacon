@@ -1,12 +1,6 @@
 
 [
   {
-    "repository":  "device_oneplus_common",
-    "target_path": "device/oneplus/common",
-    "branch":      "nougat-mr1",
-    "remote":      "aoscp"
-  },
-  {
     "repository":  "kernel_oneplus_msm8974",
     "target_path": "kernel/oneplus/msm8974",
     "branch":      "nougat-mr1",
