@@ -83,8 +83,15 @@ BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
 # Gestures
-TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
+TARGET_POWER_GESTURE_FILE := $(PLATFORM_PATH)/power/gestures.c
 TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
+TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
+TARGET_DRAW_V_NODE := "/proc/touchpanel/down_arrow_enable"
+TARGET_DRAW_INVERSE_V_NODE := "/proc/touchpanel/up_arrow_enable"
+TARGET_DRAW_O_NODE := "/proc/touchpanel/letter_o_enable"
+TARGET_DRAW_ARROW_LEFT_NODE := "/proc/touchpanel/left_arrow_enable"
+TARGET_DRAW_ARROW_RIGHT_NODE := "/proc/touchpanel/right_arrow_enable"
+TARGET_TWO_FINGER_SWIPE_NODE := "/proc/touchpanel/double_swipe_enable"
 
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
