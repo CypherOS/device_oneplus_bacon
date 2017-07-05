@@ -50,4 +50,30 @@
     <!-- Whether to intercept inputs on screen off. -->
     <bool name="config_enableKeyHandler">true</bool>
 	
+	<!-- Extended Boosts for QPerformance -->
+	
+    <!-- Boost parameters which get passed to QPerformance -->
+    <integer-array name="onbootboost_param_value">
+       <item>0x40804100</item> <!-- CPUBOOST_MAX_FREQ Core resource opcode-->
+       <item>0xFFF</item>      <!-- CPUBOOST MAX_FREQ resource value-->
+       <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ Core resource opcode -->
+       <item>0x6A4</item>      <!-- CPUBOOST MIN_FREQ resource value -->
+    </integer-array>
+	
+    <!-- Boost parameters which get passed to QPerformance -->
+    <integer-array name="qboost_weak_param_value">
+        <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ Core resource opcode -->
+        <item>0x514</item>      <!-- CPUBOOST MIN_FREQ resource value -->
+    </integer-array>
+    <integer-array name="qboost_strong_param_value">
+        <item>0x40804100</item> <!-- CPUBOOST_MAX_FREQ Core resource opcode-->
+        <item>0xFFF</item>      <!-- CPUBOOST MAX_FREQ resource value-->
+        <item>0x41800000</item> <!-- CPUBW_MIN_FREQ resource opcode-->
+        <item>140</item>        <!-- CPUBW_MIN_FREQ resource value-->
+        <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ Core resource opcode -->
+        <item>0x578</item>      <!-- CPUBOOST MIN_FREQ resource value -->
+        <item>0x40400000</item> <!-- PWR_CLPS DIS resource opcode-->
+        <item>0x1</item>        <!-- PWR_CLPS DIS resource value-->
+    </integer-array>
+	
 </resources>
